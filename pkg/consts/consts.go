@@ -21,8 +21,8 @@ import (
 )
 
 var (
-	// CORTEX_VERSION
-	CortexVersion = "master"
+	// CORTEX_VERSION = 0.1.0
+	CortexVersion = "0.1.0"
 
 	SingleTypeStrRegex   = regexp.MustCompile(`"(INT|FLOAT|STRING|BOOL)(_FEATURE)?"`)
 	CompoundTypeStrRegex = regexp.MustCompile(`"(INT|FLOAT|STRING|BOOL)(_FEATURE)?(\|(INT|FLOAT|STRING|BOOL)(_FEATURE)?)+"`)

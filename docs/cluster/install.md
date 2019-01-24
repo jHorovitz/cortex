@@ -50,10 +50,10 @@ Cortex installation is configurable. For a full list of configuration options pl
 
 ```bash
 # Download
-curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-master-mac.zip
+curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.0-mac.zip
 
 # Unzip
-unzip cortex-cli-master-mac.zip
+unzip cortex-cli-0.1.0-mac.zip
 
 # Change permissions
 chmod +x cortex
@@ -62,7 +62,7 @@ chmod +x cortex
 sudo mv cortex /usr/local/bin/cortex
 
 # Cleanup
-rm cortex-cli-master-mac.zip
+rm cortex-cli-0.1.0-mac.zip
 
 # Add bash completion scripts and the cx alias
 echo 'source <(cortex completion)' >> ~/.bash_profile
@@ -72,10 +72,10 @@ echo 'source <(cortex completion)' >> ~/.bash_profile
 
 ```bash
 # Download
-curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-master-linux.zip
+curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.0-linux.zip
 
 # Unzip
-unzip cortex-cli-master-linux.zip
+unzip cortex-cli-0.1.0-linux.zip
 
 # Change permissions
 chmod +x cortex
@@ -87,7 +87,7 @@ sudo mv cortex /usr/local/bin/cortex
 echo 'source <(cortex completion)' >> ~/.bashrc
 
 # Cleanup
-rm cortex-cli-master-linux.zip
+rm cortex-cli-0.1.0-linux.zip
 ```
 
 ## Configure the Cortex CLI

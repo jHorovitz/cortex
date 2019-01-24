@@ -3,9 +3,9 @@ set -euo pipefail
 
 DIR=$1
 IMAGE=$2
-CORTEX_VERSION=master
-CORTEX_VERSION_MINOR=master
-CORTEX_VERSION_MAJOR=master
+CORTEX_VERSION=0.1.0
+CORTEX_VERSION_MINOR=0.1
+CORTEX_VERSION_MAJOR=0
 
 docker build . -f $DIR/Dockerfile -t cortexlabs/$IMAGE \
                                   -t cortexlabs/$IMAGE:$CORTEX_VERSION \

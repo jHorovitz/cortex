@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-CORTEX_VERSION=master
+CORTEX_VERSION=0.1.0
 
 function build_and_upload() {
   GOOS=$1
