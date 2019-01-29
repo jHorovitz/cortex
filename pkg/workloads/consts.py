@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CORTEX_VERSION = "0.1.0"
+CORTEX_VERSION = "0.1.1"
 
 FEATURE_TYPE_INT = "INT_FEATURE"
 FEATURE_TYPE_FLOAT = "FLOAT_FEATURE"
