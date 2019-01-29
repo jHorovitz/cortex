@@ -85,13 +85,13 @@ func writeFile(subPath string, content string, root string, createdFiles []strin
 }
 
 var appInitFiles = map[string]string{
-	"app.yaml": `# Sample app:
+	"app.yaml": `## Sample app:
 #
 # - kind: app
 #   name: my_app
 `,
 
-	"resources/environments.yaml": `# Sample environment:
+	"resources/environments.yaml": `## Sample environment:
 #
 # - kind: environment
 #   name: dev
@@ -106,7 +106,7 @@ var appInitFiles = map[string]string{
 #       - label
 `,
 
-	"resources/raw_features.yaml": `# Sample raw features:
+	"resources/raw_features.yaml": `## Sample raw features:
 #
 # - kind: raw_feature
 #   name: feature1
@@ -129,11 +129,11 @@ var appInitFiles = map[string]string{
 #   values: [a, b, c]
 `,
 
-	"resources/aggregates.yaml": `# Sample aggregates:
+	"resources/aggregates.yaml": `## Sample aggregates:
 #
 # - kind: aggregate
 #   name: feature1_bucket_boundaries
-#   aggregator: cortex.bucketize
+#   aggregator: cortex.bucket_boundaries
 #   inputs:
 #     features:
 #       col: feature1
@@ -141,7 +141,7 @@ var appInitFiles = map[string]string{
 #       num_buckets: 3
 `,
 
-	"resources/transformed_features.yaml": `# Sample transformed features:
+	"resources/transformed_features.yaml": `## Sample transformed features:
 #
 # - kind: transformed_feature
 #   name: feature1_bucketized
@@ -163,7 +163,7 @@ var appInitFiles = map[string]string{
 #       arg2: 100
 `,
 
-	"resources/models.yaml": `# Sample model:
+	"resources/models.yaml": `## Sample model:
 #
 # - kind: model
 #   name: my_model
@@ -183,7 +183,7 @@ var appInitFiles = map[string]string{
 #     num_steps: 1000
 `,
 
-	"resources/apis.yaml": `# Sample API:
+	"resources/apis.yaml": `## Sample API:
 #
 # - kind: api
 #   name: my_api
@@ -205,6 +205,7 @@ var appInitFiles = map[string]string{
 
 	"implementations/models/model.py": `import tensorflow as tf
 
+
 def create_estimator(run_config, model_config):
     """Create an estimator to train the model.
 
@@ -220,6 +221,9 @@ def create_estimator(run_config, model_config):
     Returns:
         An instance of tf.estimator.Estimator to train the model.
     """
+
+    ## Sample create_estimator implementation:
+    #
     # columns = [
     #     tf.feature_column.numeric_column("feature1"),
     #     tf.feature_column.indicator_column(
@@ -232,10 +236,11 @@ def create_estimator(run_config, model_config):
     #     hidden_units=model_config["hparams"]["hidden_units"],
     #     config=run_config,
     # )
+
     pass
 `,
 
-	"resources/constants.yaml": `# Sample constant:
+	"resources/constants.yaml": `## Sample constant:
 #
 # - kind: constant
 #   name: my_constant
@@ -243,7 +248,7 @@ def create_estimator(run_config, model_config):
 #   value: [0, 50, 100]
 `,
 
-	"resources/aggregators.yaml": `# Sample aggregator:
+	"resources/aggregators.yaml": `## Sample aggregator:
 #
 # - kind: aggregator
 #   name: my_aggregator
@@ -273,29 +278,31 @@ def create_estimator(run_config, model_config):
     Returns:
         Any json-serializable object that matches the data type of the aggregator.
     """
-    # Sample aggregate_spark implementation:
+
+    ## Sample aggregate_spark implementation:
     #
     # from pyspark.ml.feature import QuantileDiscretizer
     #
     # discretizer = QuantileDiscretizer(
-    #     numBuckets=args["num_buckets"], inputCol=features["num"]
+    #     numBuckets=args["num_buckets"], inputCol=features["col"], outputCol="_"
     # ).fit(data)
     #
     # return discretizer.getSplits()
+
     pass
 `,
 
-	"resources/transformers.yaml": `# Sample transformer:
-  #
-  # - kind: transformer
-  #   name: my_transformer
-  #   output_type: INT_FEATURE
-  #   inputs:
-  #     features:
-  #       feature1: INT_FEATURE|FLOAT_FEATURE
-  #     args:
-  #       arg1: FLOAT
-  #       arg2: FLOAT
+	"resources/transformers.yaml": `## Sample transformer:
+#
+# - kind: transformer
+#   name: my_transformer
+#   output_type: INT_FEATURE
+#   inputs:
+#     features:
+#       feature1: INT_FEATURE|FLOAT_FEATURE
+#     args:
+#       arg1: FLOAT
+#       arg2: FLOAT
 `,
 
 	"implementations/transformers/transformer.py": `def transform_spark(data, features, args, transformed_feature):
@@ -320,11 +327,13 @@ def create_estimator(run_config, model_config):
         The original 'data' dataframe with an added column with the name of the
 				transformed_feature arg containing the transformed data.
     """
-    # Sample transform_spark implementation:
+
+    ## Sample transform_spark implementation:
     #
     # return data.withColumn(
-    #     transformed_feature, ((data[features["num"]] - args["mean"]) / args["stddev"]),
+    #     transformed_feature, ((data[features["num"]] - args["mean"]) / args["stddev"])
     # )
+
     pass
 
 
@@ -343,9 +352,11 @@ def transform_python(sample, args):
     Returns:
         The transformed value.
     """
-    # Sample transform_python implementation:
+
+    ## Sample transform_python implementation:
     #
     # return (sample["num"] - args["mean"]) / args["stddev"]
+
     pass
 
 
@@ -364,9 +375,11 @@ def reverse_transform_python(transformed_value, args):
     Returns:
         The raw data value that corresponds to the transformed value.
     """
-    # Sample reverse_transform_python implementation:
+
+    ## Sample reverse_transform_python implementation:
     #
     # return args["mean"] + (transformed_value * args["stddev"])
+
     pass
 `,
 }
