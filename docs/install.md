@@ -38,7 +38,7 @@ Install Cortex in your cluster:
 
 ```bash
 # Download install script
-curl -O https://raw.githubusercontent.com/cortexlabs/cortex/master/cortex.sh
+curl -O https://raw.githubusercontent.com/cortexlabs/cortex/0.1/cortex.sh
 
 # Change permissions
 chmod +x cortex.sh
@@ -61,10 +61,10 @@ Cortex installation is configurable. For a full list of configuration options pl
 
 ```bash
 # Download
-curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.0-mac.zip
+curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.1-mac.zip
 
 # Unzip
-unzip cortex-cli-0.1.0-mac.zip
+unzip cortex-cli-0.1.1-mac.zip
 
 # Change permissions
 chmod +x cortex
@@ -76,7 +76,7 @@ sudo mv cortex /usr/local/bin/cortex
 echo -e "\nsource <(cortex completion)" >> ~/.bash_profile && . ~/.bash_profile
 
 # Cleanup
-rm cortex-cli-0.1.0-mac.zip
+rm cortex-cli-0.1.1-mac.zip
 ```
 
 ### Linux
@@ -85,10 +85,10 @@ rm cortex-cli-0.1.0-mac.zip
 
 ```bash
 # Download
-curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.0-linux.zip
+curl -O https://s3-us-west-2.amazonaws.com/get-cortex/cortex-cli-0.1.1-linux.zip
 
 # Unzip
-unzip cortex-cli-0.1.0-linux.zip
+unzip cortex-cli-0.1.1-linux.zip
 
 # Change permissions
 chmod +x cortex
@@ -100,7 +100,7 @@ sudo mv cortex /usr/local/bin/cortex
 echo -e "\nsource <(cortex completion)" >> ~/.bashrc && . ~/.bashrc
 
 # Cleanup
-rm cortex-cli-0.1.0-linux.zip
+rm cortex-cli-0.1.1-linux.zip
 ```
 
 ## Configure the Cortex CLI
