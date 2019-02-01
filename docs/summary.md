@@ -9,7 +9,7 @@
 ## Cluster
 
 * [Config](cluster/config.md)
-* [CLI](cluster/cli.md)
+* [CLI Commands](cluster/cli.md)
 * [Security](cluster/security.md)
 * [Uninstall](cluster/uninstall.md)
 
